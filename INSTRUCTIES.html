@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instructies en overdracht | YuLe Health Boost website</title>
+<style>
+:root{--ink:#0B0B0B;--lime:#95B605;--bone:#F6F5F0;--slate:#4A4E45;--line:#E3E2D8;--warn:#B4451F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bone);color:var(--ink);
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+header{background:var(--ink);color:#fff;padding:44px 0}
+header h1{margin:0 0 8px;font-size:2rem;letter-spacing:-.02em}
+header p{margin:0;color:rgba(255,255,255,.7)}
+main{padding:44px 0 80px}
+h2{margin:48px 0 14px;padding-top:22px;border-top:2px solid var(--ink);font-size:1.4rem;letter-spacing:-.015em}
+h2:first-child{margin-top:0;padding-top:0;border-top:none}
+h3{margin:26px 0 8px;font-size:1.05rem}
+p,li{margin:0 0 .8rem}
+ul,ol{padding-left:22px}
+code{background:#fff;border:1px solid var(--line);border-radius:5px;padding:2px 6px;font-size:.9em}
+table{width:100%;border-collapse:collapse;margin:14px 0 24px;font-size:.93rem;background:#fff}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--ink);color:#fff;font-weight:600}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.ok{background:#E4EFC4;color:#3D5108}
+.half{background:#FFF0CC;color:#7A5200}
+.todo{background:#F6DAD0;color:#8A2F0C}
+.callout{background:#fff;border-left:5px solid var(--lime);border-radius:0 10px 10px 0;padding:18px 22px;margin:18px 0}
+.callout.warn{border-left-color:var(--warn)}
+.callout p:last-child{margin-bottom:0}
+footer{padding:30px 0 60px;color:var(--slate);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>YuLe Health Boost, website</h1>
+    <p>Overdracht, instructies en openstaande punten</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h2>1. De bestanden</h2>
+<p>Zeven bestanden. Alles moet in de <strong>hoofdmap</strong> van de repository staan, naast elkaar, niet in een submap. De namen moeten exact kloppen, kleine letters, geen spaties.</p>
+<table>
+  <tr><th>Bestand</th><th>Wat het is</th></tr>
+  <tr><td><code>index.html</code></td><td>De homepage, alles op een pagina</td></tr>
+  <tr><td><code>privacyverklaring.html</code></td><td>Privacyverklaring, tekst uit het ondernemingsplan</td></tr>
+  <tr><td><code>algemene-voorwaarden.html</code></td><td>Algemene voorwaarden, tekst uit het ondernemingsplan</td></tr>
+  <tr><td><code>logo.png</code></td><td>Het logo, verkleind naar 600 x 600 px</td></tr>
+  <tr><td><code>app-placeholder.svg</code></td><td>Tijdelijke afbeelding bij de app-sectie</td></tr>
+  <tr><td><code>foto-placeholder.svg</code></td><td>Tijdelijke afbeelding bij Over mij</td></tr>
+  <tr><td><code>blog-placeholder.svg</code></td><td>Tijdelijke afbeelding bij de blogartikelen</td></tr>
+</table>
+
+<h2>2. Uploaden naar GitHub</h2>
+<ol>
+  <li>Open de repository op github.com.</li>
+  <li>Klik op <strong>Add file</strong>, dan <strong>Upload files</strong>.</li>
+  <li>Sleep alle gewijzigde bestanden er in <strong>een keer</strong> in.</li>
+  <li>Onderaan op de groene <strong>Commit changes</strong> klikken.</li>
+</ol>
+<div class="callout warn">
+  <p><strong>Upload altijd alles in een keer.</strong> Bij meerdere uploads kort na elkaar start GitHub meerdere publicaties tegelijk en krijg je de foutmelding dat er al een deployment bezig is. Een commit is een publicatie.</p>
+</div>
+<p>Na de commit publiceert GitHub automatisch. Onder het tabblad <strong>Actions</strong> zie je de voortgang. Groen vinkje betekent live. Zie je in de browser nog de oude versie, ververs dan met Ctrl+F5.</p>
+
+<h3>Iets kleins aanpassen</h3>
+<p>Downloaden en opnieuw uploaden hoeft niet. Klik in de repo op het bestand, dan op het potloodje rechtsboven. Je bewerkt direct in de browser en klikt onderaan op Commit changes.</p>
+
+<h2>3. Het formulier werkend maken</h2>
+<p>Het kennismakingsformulier staat op de site maar verstuurt nog niets. Losse HTML kan geen mail versturen, daar is een tussendienst voor nodig. Formspree is gratis tot 50 aanvragen per maand.</p>
+<ol>
+  <li>Ga naar <strong>formspree.io</strong> en maak een account aan met <code>ylboost@outlook.com</code>.</li>
+  <li>Maak een nieuw formulier. Je krijgt een adres als <code>https://formspree.io/f/xayzbwqd</code>.</li>
+  <li>Open <code>index.html</code>, zoek op <code>JOUW_FORMSPREE_ID</code> en vervang dat door het laatste stukje, in dit voorbeeld <code>xayzbwqd</code>.</li>
+  <li>Opslaan en uploaden. De eerste aanvraag moet je in je mailbox eenmalig bevestigen.</li>
+</ol>
+<p>Test hem daarna zelf een keer, dat is de enige manier om zeker te weten dat het werkt.</p>
+
+<h2>4. Wat er nog vervangen moet worden</h2>
+<p>In de code staan hoofdletter-markeringen en comments bij alles wat nog niet definitief is. Zoek in <code>index.html</code> op deze woorden.</p>
+<table>
+  <tr><th>Zoek op</th><th>Wat je invult</th></tr>
+  <tr><td><code>JOUW_FORMSPREE_ID</code></td><td>De code van je Formspree-formulier</td></tr>
+  <tr><td><code>KvK 00000000</code></td><td>Het KvK-nummer, in de footer. Ook in de twee juridische pagina's staat nog "KvK-nummer: volgt" en "Btw-id: volgt"</td></tr>
+  <tr><td><code>PLACEHOLDER</code></td><td>De drie reviewteksten</td></tr>
+  <tr><td><code>foto-placeholder.svg</code></td><td>Bestandsnaam van de echte portretfoto</td></tr>
+  <tr><td><code>app-placeholder.svg</code></td><td>Bestandsnaam van een screenshot uit Virtuagym</td></tr>
+  <tr><td><code>blog-placeholder.svg</code></td><td>Bestandsnamen van de blogafbeeldingen</td></tr>
+  <tr><td><code>BGN-logo hier</code></td><td>Het officiele BGN-beeldmerk, zodra de registratie rond is</td></tr>
+  <tr><td><code>EREPS-logo hier</code></td><td>Het officiele EREPS-beeldmerk</td></tr>
+  <tr><td><code>JOUW_ACCOUNT</code></td><td>De Instagram-handle. De social-iconen staan als comment in de code, haal <code>&lt;!--</code> en <code>--&gt;</code> weg om ze te tonen</td></tr>
+</table>
+
+<h3>Een afbeelding vervangen</h3>
+<p>Upload de nieuwe afbeelding met een korte naam zonder spaties, bijvoorbeeld <code>yuri-portret.jpg</code>. Zoek in <code>index.html</code> naar <code>foto-placeholder.svg</code> en vervang dat door de nieuwe bestandsnaam. Bijsnijden hoeft niet, dat regelt de opmaak.</p>
+
+<h2>5. Wat af is, en wat niet</h2>
+<p>Per ID uit het feedbackdocument.</p>
+<table>
+  <tr><th>Status</th><th>ID's</th></tr>
+  <tr>
+    <td><span class="tag ok">AF</span></td>
+    <td>W01, W02, W04, W05, W06, W07, W08, W09, W10, W11, W12, W14, W15, W17, W21, W23, W24, W27, W29, W30, W33</td>
+  </tr>
+  <tr>
+    <td><span class="tag half">WACHT OP MATERIAAL</span></td>
+    <td>W03 (formulier moet gekoppeld), W13 (screenshots), W16 (reviews), W18, W19, W20 (registratielogo's), W22 (foto), W26 (blog verbergen of vullen), W28 (socials)</td>
+  </tr>
+  <tr>
+    <td><span class="tag todo">NIET GEDAAN</span></td>
+    <td>W25 (receptenboek verkopen, bewust later), W31 (eigen beheer via CMS, vervallen), W32 (deze pagina dekt dit grotendeels af)</td>
+  </tr>
+</table>
+
+<h2>6. Checklist voor livegang</h2>
+<ol>
+  <li>Formulier gekoppeld en zelf getest.</li>
+  <li>KvK-nummer en btw-id ingevuld op alle drie de pagina's.</li>
+  <li>Echte reviews geplaatst, of de hele sectie Ervaringen verwijderd. Nepreviews zijn erger dan geen reviews.</li>
+  <li>Blogsectie gevuld of verborgen. Placeholderteksten horen niet op een live site.</li>
+  <li>Portretfoto geplaatst.</li>
+  <li>Opleidingsstatus gecontroleerd. Ik heb "in opleiding" bij NHA weggehaald, controleer of dat klopt.</li>
+  <li>Tekst over vergoeding gecontroleerd tegen de werkelijke BGN-status. Er staat nu geen garantie meer in.</li>
+  <li>Registratielogo's alleen tonen als de registratie echt rond is, en volgens hun gebruiksvoorwaarden.</li>
+  <li>Alles op een telefoon doorlopen: menu, knoppen, formulier, uitklappers, footer.</li>
+  <li>Domein gekoppeld en HTTPS aangezet.</li>
+</ol>
+
+<h2>7. Eigen domein koppelen</h2>
+<ol>
+  <li>Koop het domein, bijvoorbeeld bij TransIP. Let op het verlengtarief.</li>
+  <li>In GitHub naar <strong>Settings</strong>, dan <strong>Pages</strong>. Vul bij <strong>Custom domain</strong> het domein in en klik Save.</li>
+  <li>Bij de registrar, in het DNS-scherm, vier A-records op <code>@</code> zetten: <code>185.199.108.153</code>, <code>185.199.109.153</code>, <code>185.199.110.153</code>, <code>185.199.111.153</code>.</li>
+  <li>Plus een CNAME op <code>www</code> naar <code>gebruikersnaam.github.io</code>.</li>
+  <li>Wacht tot de DNS is doorgekomen, meestal binnen een uur. Zet dan in GitHub <strong>Enforce HTTPS</strong> aan.</li>
+</ol>
+<p>Zet bij de registrar ook de whois-afscherming aan, anders staat het woonadres publiek zichtbaar.</p>
+
+<h2>8. Waar je op moet letten</h2>
+<div class="callout">
+  <p><strong>Aanpassen betekent in de code werken.</strong> Er zit geen beheeromgeving achter. Teksten en prijzen wijzigen gaat via het bestand. Voor een paar wijzigingen per jaar is dat prima. Wil je wekelijks bloggen, dan loop je hier op termijn tegenaan en is WordPress of Squarespace een betere keuze.</p>
+</div>
+<div class="callout warn">
+  <p><strong>Werk niet met zijn tweeen tegelijk in hetzelfde bestand.</strong> Wie het laatst commit, overschrijft de ander zonder waarschuwing. Even afstemmen wie er aan zit.</p>
+</div>
+<div class="callout warn">
+  <p><strong>Het e-mailadres.</strong> Op de site staat nu <code>ylboost@outlook.com</code>, zoals in het ondernemingsplan. Zodra het domein er is, is <code>info@yulehealthboost.nl</code> een stuk professioneler. Dat kan met een simpele doorstuur-alias bij de registrar, gratis.</p>
+</div>
+<div class="callout">
+  <p><strong>Het logo heeft geen transparante achtergrond.</strong> Op de site geen probleem, want daar staat het overal op zwart. Voor drukwerk, visitekaartjes of Instagram heb je een versie met transparante achtergrond nodig, liefst als SVG of PDF. Vraag die op bij wie het logo gemaakt heeft.</p>
+</div>
+
+</main>
+
+<footer class="wrap">
+  <p>Opgesteld als overdrachtsdocument bij de conceptwebsite. Dit bestand hoeft niet op GitHub, het is bedoeld om lokaal te openen.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img" aria-label="Voorbeeldweergave van de app">
+  <rect width="760" height="460" fill="#15170F"/>
+  <g opacity="0.5">
+    <circle cx="380" cy="230" r="205" fill="none" stroke="#95B605" stroke-width="1.5"/>
+  </g>
+  <!-- telefoon -->
+  <rect x="285" y="55" width="190" height="350" rx="26" fill="#0B0B0B" stroke="#95B605" stroke-width="2"/>
+  <rect x="352" y="68" width="56" height="7" rx="3.5" fill="#95B605" opacity="0.6"/>
+  <rect x="303" y="92" width="90" height="10" rx="5" fill="#FFFFFF" opacity="0.85"/>
+  <rect x="303" y="112" width="150" height="7" rx="3.5" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="303" y="136" width="154" height="54" rx="10" fill="none" stroke="#95B605" stroke-width="1.5"/>
+  <path d="M313 172 h22 l7 -16 l7 30 l7 -38 l7 38 l6 -14 h78" fill="none" stroke="#95B605" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="303" y="204" width="154" height="34" rx="8" fill="#FFFFFF" opacity="0.07"/>
+  <rect x="303" y="248" width="154" height="34" rx="8" fill="#FFFFFF" opacity="0.07"/>
+  <rect x="303" y="292" width="154" height="34" rx="8" fill="#FFFFFF" opacity="0.07"/>
+  <rect x="303" y="342" width="100" height="26" rx="13" fill="#95B605"/>
+  <text x="380" y="437" text-anchor="middle" fill="#FFFFFF" opacity="0.45"
+        font-family="system-ui, sans-serif" font-size="15" letter-spacing="3">VERVANG DOOR SCREENSHOTS VAN VIRTUAGYM</text>
+</svg>

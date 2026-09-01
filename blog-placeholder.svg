@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Placeholder-afbeelding">
+  <rect width="800" height="500" fill="#0B0B0B"/>
+  <g fill="none" stroke="#95B605" stroke-width="2.5" opacity="0.35">
+    <circle cx="400" cy="250" r="150"/>
+    <circle cx="400" cy="250" r="190"/>
+  </g>
+  <path d="M170 250 H300 l18 -46 l17 92 l16 -108 l18 108 l14 -46 H630"
+        fill="none" stroke="#95B605" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="410" text-anchor="middle" fill="#FFFFFF" opacity="0.55"
+        font-family="system-ui, sans-serif" font-size="20" letter-spacing="4">VERVANG DEZE AFBEELDING</text>
+</svg>

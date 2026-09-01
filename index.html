@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YuLe Health Boost | Online voedings- en leefstijlcoaching</title>
+<meta name="description" content="Persoonlijke online voedings- en leefstijlcoaching door Yuri Leemans. Haalbare stappen, blijvend resultaat, uiteindelijk zelfstandig verder.">
+<link rel="icon" href="logo.png">
+<meta property="og:title" content="YuLe Health Boost">
+<meta property="og:description" content="Jouw boost naar een gezonde leefstijl.">
+<meta property="og:image" content="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0B; --ink-soft:#15170F;
+  --lime:#95B605; --lime-bright:#B0D40C;
+  --bone:#F6F5F0; --slate:#4A4E45; --line:#E3E2D8;
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.9rem)}
+h3{font-size:1.15rem;letter-spacing:-.01em}
+p{margin:0 0 1rem}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin:0 0 .9rem}
+.lead{max-width:44em;margin-top:14px;color:var(--slate)}
+section{padding:88px 0}
+.section-light{background:var(--bone)}
+.section-dark{background:var(--ink);color:#fff}
+.section-dark .lead{color:rgba(255,255,255,.75)}
+.section-dark .eyebrow{color:var(--lime-bright)}
+
+header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.09)}
+.nav{display:flex;align-items:center;gap:14px;height:74px}
+.nav-logo{height:50px;width:50px;border-radius:50%;object-fit:cover;flex:none}
+.nav-name{font-family:var(--display);font-weight:700;color:#fff;font-size:1rem;text-decoration:none;line-height:1.1}
+.nav-name span{display:block;font-family:var(--body);font-weight:500;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.nav-links{margin-left:auto;display:flex;gap:24px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.92rem;font-weight:500}
+.nav-links a:hover{color:var(--lime-bright)}
+.nav-links .btn{color:var(--ink)}
+.nav-toggle{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:8px 12px;font:inherit;font-size:.85rem}
+
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.97rem;text-decoration:none;border:1.5px solid transparent;transition:transform .15s ease,background .15s ease,color .15s ease;cursor:pointer;font-family:var(--body)}
+.btn-primary{background:var(--lime);color:var(--ink)}
+.btn-primary:hover{background:var(--lime-bright);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.32);color:#fff}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime-bright)}
+.section-light .btn-ghost{border-color:var(--ink);color:var(--ink)}
+.section-light .btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-sm{padding:11px 20px;font-size:.88rem}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--lime-bright);outline-offset:3px;border-radius:4px}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:72px 0 88px}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.3rem);font-weight:800;color:#fff}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero-lead{font-size:1.1rem;color:rgba(255,255,255,.78);max-width:34em;margin:22px 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-mark{justify-self:center;max-width:300px}
+.hero-note{margin:26px 0 0;font-size:.9rem;color:rgba(255,255,255,.55)}
+.pulse{width:100%;max-width:460px;margin-top:34px;opacity:.85}
+.pulse path{stroke:var(--lime);stroke-width:2.5;fill:none;stroke-dasharray:620;stroke-dashoffset:620;animation:draw 2.6s .3s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.pulse path{animation:none;stroke-dashoffset:0}*{scroll-behavior:auto!important}.btn:hover,.value:hover,.post:hover{transform:none}}
+
+/* waarden */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:44px}
+.value{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 26px 30px;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.value::before{content:"";position:absolute;top:0;left:0;height:4px;width:38px;background:var(--lime);transition:width .32s cubic-bezier(.22,1,.36,1)}
+.value:hover{transform:translateY(-6px);border-color:var(--ink);box-shadow:0 16px 34px rgba(11,11,11,.11)}
+.value:hover::before{width:100%}
+.value:hover .value-icon{background:var(--lime)}
+.value:hover .value-icon svg{stroke:var(--ink)}
+.value-icon{width:52px;height:52px;border-radius:14px;background:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .22s ease}
+.value-icon svg{width:26px;height:26px;stroke:var(--lime);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .22s ease}
+.value h3{font-size:1.55rem;font-weight:800;letter-spacing:-.025em;margin-bottom:10px}
+.value p{font-size:.94rem;color:var(--slate);margin:0}
+
+/* voor wie */
+.fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 34px;margin-top:36px;list-style:none;padding:0}
+.fit li{position:relative;padding-left:34px;font-size:1rem}
+.fit li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:9px;border-left:3px solid var(--lime);border-bottom:3px solid var(--lime);transform:rotate(-45deg)}
+.fit-note{margin-top:34px;padding:22px 26px;border-left:4px solid var(--lime);background:#fff;border-radius:0 12px 12px 0;font-size:.97rem}
+
+/* stappen */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:26px;margin-top:44px}
+.step{border-top:2px solid var(--lime);padding-top:20px}
+.step::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-family:var(--display);font-weight:800;font-size:.9rem;color:var(--lime);display:block;margin-bottom:10px}
+.step h3{margin-bottom:8px}
+.step p{color:rgba(255,255,255,.7);font-size:.94rem;margin:0}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;margin-top:44px}
+.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
+.review-quote{font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:1;color:var(--lime);margin-bottom:10px}
+.review p{font-size:.97rem;color:var(--slate);flex:1;margin-bottom:18px}
+.review-who{font-weight:600;font-size:.92rem;border-top:1px solid var(--line);padding-top:14px}
+.review-who span{display:block;font-weight:400;color:var(--slate);font-size:.85rem}
+.cta-band{margin-top:44px;text-align:center}
+
+/* virtuagym */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 28px}
+.section-dark .card{background:var(--ink-soft);border-color:rgba(255,255,255,.14)}
+.card ul,.tick{list-style:none;margin:16px 0 0;padding:0}
+.card li,.tick li{padding-left:24px;position:relative;margin-bottom:9px;font-size:.94rem}
+.card li::before,.tick li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:6px;border-left:2.5px solid var(--lime);border-bottom:2.5px solid var(--lime);transform:rotate(-45deg)}
+.app-shot{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14)}
+
+/* trajecten */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:36px 0 30px}
+.tab{font:inherit;font-family:var(--body);font-weight:600;font-size:.93rem;cursor:pointer;padding:11px 22px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--slate)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.plans[hidden]{display:none}
+.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column}
+.plan.featured{border-color:var(--ink);border-width:2px;position:relative}
+.plan.featured::after{content:"Meeste begeleiding";position:absolute;top:-12px;left:28px;background:var(--lime);color:var(--ink);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.plan-name{font-family:var(--display);font-weight:700;font-size:1.35rem}
+.plan-dur{font-size:.85rem;color:var(--slate);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
+.plan-price{font-family:var(--display);font-size:2.9rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.plan-price small{font-family:var(--body);font-size:.8rem;font-weight:500;color:var(--slate);display:block;margin-top:6px;letter-spacing:0}
+.plan-claim{margin:18px 0 22px;font-size:.95rem;color:var(--slate)}
+.plan .btn{text-align:center}
+.plan-details{margin-top:18px;border-top:1px solid var(--line);padding-top:6px}
+.plan-details summary{list-style:none;cursor:pointer;padding:10px 0;font-weight:600;font-size:.92rem;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.plan-details summary::-webkit-details-marker{display:none}
+.plan-details summary::after{content:"";width:9px;height:9px;flex:none;border-right:2.5px solid var(--lime);border-bottom:2.5px solid var(--lime);transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s ease}
+.plan-details[open] summary::after{transform:rotate(-135deg) translate(-3px,-3px)}
+.plan-details h4{margin:8px 0 6px;font-family:var(--display);font-size:.95rem}
+.plan-details li{color:var(--slate);font-size:.92rem}
+.plan-details .fineprint{margin:14px 0 6px;font-size:.8rem;color:var(--slate)}
+
+/* over */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start;margin-top:40px}
+.portrait{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.creds{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--line)}
+.creds li{border-bottom:1px solid var(--line);padding:13px 0;font-size:.93rem;display:flex;justify-content:space-between;gap:18px}
+.creds span{color:var(--slate);text-align:right}
+.trust{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+.trust-logos{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:16px}
+.trust-slot{border:1.5px dashed var(--line);border-radius:10px;padding:16px 22px;font-size:.85rem;color:var(--slate)}
+
+/* blog */
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:40px}
+.post{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .18s ease,box-shadow .18s ease}
+.post:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(11,11,11,.1)}
+.post img{width:100%;aspect-ratio:8/5;object-fit:cover;background:var(--ink)}
+.post-body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1}
+.post-meta{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:12px}
+.post-meta span{color:var(--slate);margin-left:10px;letter-spacing:.06em}
+.post h3{font-size:1.3rem;margin-bottom:12px}
+.post p{font-size:.94rem;color:var(--slate);margin:0}
+.post-more{margin-top:18px;font-weight:600;font-size:.92rem}
+.post-more::after{content:" \2192"}
+
+/* formulier */
+.form-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;margin-top:40px;align-items:start}
+form{background:var(--ink-soft);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px 28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.88rem;font-weight:600;margin-bottom:7px}
+.field label i{font-style:normal;color:var(--lime)}
+.field input,.field textarea{width:100%;padding:13px 15px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;font:inherit;font-size:.97rem}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.35)}
+.field textarea{min-height:110px;resize:vertical}
+form .btn{width:100%;text-align:center;margin-top:6px}
+.form-note{font-size:.87rem;color:rgba(255,255,255,.6);margin:16px 0 0}
+.contact-list{list-style:none;padding:0;margin:22px 0 0}
+.contact-list li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem}
+.contact-list strong{display:block;font-family:var(--display);margin-bottom:3px}
+.contact-list a{color:var(--lime-bright);text-decoration:none;font-weight:600}
+.contact-list a:hover{text-decoration:underline}
+.socials{display:flex;gap:12px;margin-top:24px}
+.socials a{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.socials a:hover{border-color:var(--lime);background:rgba(149,182,5,.12)}
+.socials svg{width:20px;height:20px;stroke:var(--lime);fill:none;stroke-width:2}
+
+footer{background:var(--ink);color:rgba(255,255,255,.55);padding:44px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.87rem}
+.foot{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+footer a{color:rgba(255,255,255,.75)}
+
+@media(max-width:860px){
+  .hero{padding:34px 0 70px}
+  .hero-grid,.plans,.split,.about,.form-grid{grid-template-columns:1fr}
+  .hero-mark{max-width:210px;order:-1;justify-self:center;margin-bottom:26px}
+  .nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid rgba(255,255,255,.12);align-items:stretch}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.07)}
+  .nav-links .btn{margin-top:12px;border-bottom:none}
+  .nav-toggle{display:block}
+  section{padding:60px 0}
+  .portrait{max-width:340px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <img class="nav-logo" src="logo.png" alt="">
+    <a class="nav-name" href="#top">YuLe<span>Health Boost</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <nav class="nav-links" id="navlinks">
+      <a href="#voor-wie">Voor wie</a>
+      <a href="#aanpak">Zo werkt het</a>
+      <a href="#trajecten">Trajecten</a>
+      <a href="#over">Over Yuri</a>
+      <a class="btn btn-primary btn-sm" href="#kennismaking">Gratis kennismaking</a>
+    </nav>
+  </div>
+</header>
+
+<!-- W01 + W02: logo direct in beeld, kennismaking als primaire CTA -->
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Online voedings- en leefstijlcoaching</p>
+      <h1>Jouw boost naar een <em>gezonde leefstijl</em>.</h1>
+      <p class="hero-lead">Geen crashdieet en geen standaardschema. Samen bouwen we aan gewoontes die passen bij jouw dag, zodat je uiteindelijk zelfstandig verder kunt. Volledig online, met korte lijnen via de app.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#kennismaking">Plan je gratis kennismaking</a>
+        <a class="btn btn-ghost" href="#aanpak">Bekijk hoe de begeleiding werkt</a>
+      </div>
+      <p class="hero-note">Vrijblijvend en online. Je zit nergens aan vast.</p>
+      <svg class="pulse" viewBox="0 0 520 60" aria-hidden="true">
+        <path d="M0 30 H150 l14 -22 l13 44 l12 -52 l14 52 l11 -22 H520"/>
+      </svg>
+    </div>
+    <img class="hero-mark" src="logo.png" alt="Logo YuLe Health Boost">
+  </div>
+</div>
+
+<!-- uitgangspunten -->
+<section class="section-light">
+  <div class="wrap">
+    <p class="eyebrow">Waar ik voor sta</p>
+    <h2>Vijf uitgangspunten in elk traject</h2>
+    <div class="values">
+      <div class="value">
+        <div class="value-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+        <h3>Persoonlijk</h3>
+        <p>Iedere cli&euml;nt is anders. De begeleiding sluit aan op jouw situatie, wensen en doelen.</p>
+      </div>
+      <div class="value">
+        <div class="value-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/></svg></div>
+        <h3>Betrokken</h3>
+        <p>Korte lijnen, persoonlijk contact en oprechte interesse in je voortgang, van begin tot eind.</p>
+      </div>
+      <div class="value">
+        <div class="value-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 5v5h-5"/><path d="M19.5 10a8 8 0 1 0-.6 5"/></svg></div>
+        <h3>Duurzaam</h3>
+        <p>De focus ligt op gewoontes die je op de lange termijn volhoudt, niet op tijdelijke di&euml;ten.</p>
+      </div>
+      <div class="value">
+        <div class="value-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5z"/><path d="M9 8.5l2 2 4-4"/></svg></div>
+        <h3>Deskundig</h3>
+        <p>Advies op basis van de Schijf van Vijf, de Richtlijnen Goede Voeding en actuele kennis.</p>
+      </div>
+      <div class="value">
+        <div class="value-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3>Positief</h3>
+        <p>Verandering begint klein. Successen vieren houdt de begeleiding leuk en effectief.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W15: voor wie -->
+<section class="section-light" id="voor-wie" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Voor wie</p>
+    <h2>YuLe Health Boost past bij jou als je&hellip;</h2>
+    <ul class="fit">
+      <li>Op een verantwoorde manier wil afvallen of gezonder wil eten</li>
+      <li>Klaar bent met steeds opnieuw een dieet beginnen</li>
+      <li>Behoefte hebt aan structuur en iemand die met je meekijkt</li>
+      <li>Verjaardagen, weekenden en uit eten gaan wil leren inpassen</li>
+      <li>Wil begrijpen w&aacute;&aacute;rom iets werkt, niet alleen w&aacute;t je moet doen</li>
+      <li>Uiteindelijk zelfstandig verder wil zonder coach</li>
+    </ul>
+    <!-- W14: zelfredzaamheid -->
+    <div class="fit-note">
+      <strong>Het doel is dat je mij niet meer nodig hebt.</strong> Tijdens de begeleiding bouw je kennis, vaardigheden en routines op waarmee je je nieuwe leefstijl zelf voortzet. Niet afhankelijk blijven van een coach, maar zelf aan het stuur.
+    </div>
+  </div>
+</section>
+
+<!-- W02 secundair doel: zo werkt het -->
+<section class="section-dark" id="aanpak">
+  <div class="wrap">
+    <p class="eyebrow">Zo werkt het</p>
+    <h2>Van kennismaking tot eigen routine</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Gratis kennismaking</h3>
+        <p>We bespreken online waar je nu staat en wat je wil bereiken. Vrijblijvend, je zit nergens aan vast.</p>
+      </div>
+      <div class="step">
+        <h3>Intake</h3>
+        <p>Een uitgebreid gesprek van 60 minuten. We brengen je situatie in kaart en stellen samen haalbare doelen.</p>
+      </div>
+      <div class="step">
+        <h3>Begeleiding</h3>
+        <p>Je persoonlijke advies staat klaar in de app. We houden contact, sturen bij en vieren wat er goed gaat.</p>
+      </div>
+      <div class="step">
+        <h3>Zelfstandig verder</h3>
+        <p>We sluiten af met een evaluatie. Je gaat verder met routines die je zelf kunt volhouden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W16 + W17: reviews, daarna opnieuw CTA
+     LET OP: dit zijn voorbeeldteksten. Vervang ze door echte reviews met
+     toestemming, of verwijder deze hele sectie voordat de site live gaat. -->
+<section class="section-light" id="ervaringen">
+  <div class="wrap">
+    <p class="eyebrow">Ervaringen</p>
+    <h2>Wat cli&euml;nten zeggen</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="review-quote">&ldquo;</div>
+        <p>PLACEHOLDER. Vervang deze tekst door een echte review van een cli&euml;nt. Kort houden, twee tot vier zinnen, in de woorden van de cli&euml;nt zelf.</p>
+        <div class="review-who">Voornaam<span>Traject van 16 weken</span></div>
+      </div>
+      <div class="review">
+        <div class="review-quote">&ldquo;</div>
+        <p>PLACEHOLDER. Vervang deze tekst door een echte review van een cli&euml;nt. Kort houden, twee tot vier zinnen, in de woorden van de cli&euml;nt zelf.</p>
+        <div class="review-who">Voornaam<span>Traject van 24 weken</span></div>
+      </div>
+      <div class="review">
+        <div class="review-quote">&ldquo;</div>
+        <p>PLACEHOLDER. Vervang deze tekst door een echte review van een cli&euml;nt. Kort houden, twee tot vier zinnen, in de woorden van de cli&euml;nt zelf.</p>
+        <div class="review-who">Voornaam<span>Los voedingsconsult</span></div>
+      </div>
+    </div>
+    <div class="cta-band">
+      <a class="btn btn-primary" href="#kennismaking">Plan je gratis kennismaking</a>
+    </div>
+  </div>
+</section>
+
+<!-- W13: Virtuagym visueel -->
+<section class="section-dark" id="app">
+  <div class="wrap">
+    <p class="eyebrow">De begeleiding in de app</p>
+    <h2>Alles op &eacute;&eacute;n plek</h2>
+    <p class="lead">De begeleiding loopt via Virtuagym. Na je aanmelding krijg je een uitnodiging per mail, daarmee log je in op de app. Vanaf dat moment staat alles bij elkaar op je telefoon.</p>
+    <div class="split">
+      <div class="app-shot">
+        <!-- Vervang door echte screenshots van de cliëntomgeving zodra beschikbaar -->
+        <img src="app-placeholder.svg" alt="Voorbeeld van de clientomgeving in de app">
+      </div>
+      <div class="card">
+        <h3>Wat je in de app vindt</h3>
+        <ul>
+          <li>Je persoonlijke voedingsschema en advies</li>
+          <li>Je voedingsdagboek</li>
+          <li>Voortgang en metingen in beeld</li>
+          <li>Chat en videoconsulten met mij</li>
+          <li>Je afspraken en planning</li>
+          <li>Recepten en achtergrondinformatie</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W06 + W11: trajecten en investering -->
+<section class="section-light" id="trajecten">
+  <div class="wrap">
+    <p class="eyebrow">Begeleidingstrajecten</p>
+    <h2>Trajecten &amp; investering</h2>
+    <p class="lead">Basis en Plus bevatten dezelfde onderdelen, Plus geeft je meer coachingsgesprekken. Hoe langer het traject, hoe voordeliger de begeleiding per week. Kies eerst een gratis kennismaking, daarna bepalen we samen welk traject past.</p>
+
+    <div class="tabs" role="tablist" aria-label="Looptijd">
+      <button class="tab" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="true">6 weken</button>
+      <button class="tab" role="tab" id="tab-16" aria-controls="panel-16" aria-selected="false">16 weken</button>
+      <button class="tab" role="tab" id="tab-24" aria-controls="panel-24" aria-selected="false">24 weken</button>
+    </div>
+
+    <!-- 6 WEKEN -->
+    <div class="plans" role="tabpanel" id="panel-6" aria-labelledby="tab-6">
+      <div class="plan">
+        <div class="plan-name">Basis</div>
+        <div class="plan-dur">6 weken</div>
+        <div class="plan-price">&euro; 329<small>investering, inclusief btw</small></div>
+        <p class="plan-claim">Een korte start om je eetpatroon op orde te krijgen en de eerste gewoontes neer te zetten.</p>
+        <a class="btn btn-ghost" href="#kennismaking">Plan je gratis kennismaking</a>
+        <details class="plan-details">
+          <summary>Wat is inbegrepen?</summary>
+          <h4>Persoonlijke begeleiding</h4>
+          <ul class="tick">
+            <li><strong>3 coachingsgesprekken</strong> van 30 minuten</li>
+            <li>Uitgebreide intake van 60 minuten</li>
+          </ul>
+          <h4>In elk traject</h4>
+          <ul class="tick">
+            <li>Persoonlijk voedingsadvies</li>
+            <li>Toegang tot de app (Virtuagym)</li>
+            <li>Voedingsdagboek</li>
+            <li>Voortgang en metingen bijhouden</li>
+            <li>Chatcontact tussen de gesprekken door</li>
+            <li>Recepten en informatieve content</li>
+            <li>Tussentijdse aanpassingen van je schema</li>
+            <li>Afsluitende evaluatie</li>
+          </ul>
+          <p class="fineprint">Een extra coachingsgesprek van 30 minuten kost &euro; 50. Alle bedragen zijn inclusief btw.</p>
+        </details>
+      </div>
+      <div class="plan featured">
+        <div class="plan-name">Plus</div>
+        <div class="plan-dur">6 weken</div>
+        <div class="plan-price">&euro; 469<small>investering, inclusief btw</small></div>
+        <p class="plan-claim">Zelfde traject, maar met dubbel zoveel contactmomenten. Fijn als je meer sturing en houvast wil.</p>
+        <a class="btn btn-primary" href="#kennismaking">Plan je gratis kennismaking</a>
+        <details class="plan-details">
+          <summary>Wat is inbegrepen?</summary>
+          <h4>Persoonlijke begeleiding</h4>
+          <ul class="tick">
+            <li><strong>6 coachingsgesprekken</strong> van 30 minuten, dus wekelijks contact</li>
+            <li>Uitgebreide intake van 60 minuten</li>
+          </ul>
+          <h4>In elk traject</h4>
+          <ul class="tick">
+            <li>Persoonlijk voedingsadvies</li>
+            <li>Toegang tot de app (Virtuagym)</li>
+            <li>Voedingsdagboek</li>
+            <li>Voortgang en metingen bijhouden</li>
+            <li>Chatcontact tussen de gesprekken door</li>
+            <li>Recepten en informatieve content</li>
+            <li>Tussentijdse aanpassingen van je schema</li>
+            <li>Afsluitende evaluatie</li>
+          </ul>
+          <p class="fineprint">Een extra coachingsgesprek van 30 minuten kost &euro; 50. Alle bedragen zijn inclusief btw.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 16 WEKEN -->
+    <div class="plans" role="tabpanel" id="panel-16" aria-labelledby="tab-16" hidden>
+      <div class="plan">
+        <div class="plan-name">Basis</div>
+        <div class="plan-dur">16 weken</div>
+        <div class="plan-price">&euro; 649<small>investering, inclusief btw</small></div>
+        <p class="plan-claim">Genoeg tijd om nieuwe gewoontes echt te laten wennen en je aanpak onderweg bij te stellen.</p>
+        <a class="btn btn-ghost" href="#kennismaking">Plan je gratis kennismaking</a>
+        <details class="plan-details">
+          <summary>Wat is inbegrepen?</summary>
+          <h4>Persoonlijke begeleiding</h4>
+          <ul class="tick">
+            <li><strong>8 coachingsgesprekken</strong> van 30 minuten</li>
+            <li>Uitgebreide intake van 60 minuten</li>
+          </ul>
+          <h4>In elk traject</h4>
+          <ul class="tick">
+            <li>Persoonlijk voedingsadvies</li>
+            <li>Toegang tot de app (Virtuagym)</li>
+            <li>Voedingsdagboek</li>
+            <li>Voortgang en metingen bijhouden</li>
+            <li>Chatcontact tussen de gesprekken door</li>
+            <li>Recepten en informatieve content</li>
+            <li>Tussentijdse aanpassingen van je schema</li>
+            <li>Afsluitende evaluatie</li>
+          </ul>
+          <p class="fineprint">Een extra coachingsgesprek van 30 minuten kost &euro; 50. Alle bedragen zijn inclusief btw.</p>
+        </details>
+      </div>
+      <div class="plan featured">
+        <div class="plan-name">Plus</div>
+        <div class="plan-dur">16 weken</div>
+        <div class="plan-price">&euro; 849<small>investering, inclusief btw</small></div>
+        <p class="plan-claim">Vier extra gesprekken bovenop Basis, zodat je vaker kunt overleggen en sneller kunt bijsturen.</p>
+        <a class="btn btn-primary" href="#kennismaking">Plan je gratis kennismaking</a>
+        <details class="plan-details">
+          <summary>Wat is inbegrepen?</summary>
+          <h4>Persoonlijke begeleiding</h4>
+          <ul class="tick">
+            <li><strong>12 coachingsgesprekken</strong> van 30 minuten</li>
+            <li>Uitgebreide intake van 60 minuten</li>
+          </ul>
+          <h4>In elk traject</h4>
+          <ul class="tick">
+            <li>Persoonlijk voedingsadvies</li>
+            <li>Toegang tot de app (Virtuagym)</li>
+            <li>Voedingsdagboek</li>
+            <li>Voortgang en metingen bijhouden</li>
+            <li>Chatcontact tussen de gesprekken door</li>
+            <li>Recepten en informatieve content</li>
+            <li>Tussentijdse aanpassingen van je schema</li>
+            <li>Afsluitende evaluatie</li>
+          </ul>
+          <p class="fineprint">Een extra coachingsgesprek van 30 minuten kost &euro; 50. Alle bedragen zijn inclusief btw.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 24 WEKEN -->
+    <div class="plans" role="tabpanel" id="panel-24" aria-labelledby="tab-24" hidden>
+      <div class="plan">
+        <div class="plan-name">Basis</div>
+        <div class="plan-dur">24 weken</div>
+        <div class="plan-price">&euro; 849<small>investering, inclusief btw</small></div>
+        <p class="plan-claim">Een half jaar begeleiding. Ruimte om terugval op te vangen en je routine echt eigen te maken.</p>
+        <a class="btn btn-ghost" href="#kennismaking">Plan je gratis kennismaking</a>
+        <details class="plan-details">
+          <summary>Wat is inbegrepen?</summary>
+          <h4>Persoonlijke begeleiding</h4>
+          <ul class="tick">
+            <li><strong>12 coachingsgesprekken</strong> van 30 minuten</li>
+            <li>Uitgebreide intake van 60 minuten</li>
+          </ul>
+          <h4>In elk traject</h4>
+          <ul class="tick">
+            <li>Persoonlijk voedingsadvies</li>
+            <li>Toegang tot de app (Virtuagym)</li>
+            <li>Voedingsdagboek</li>
+            <li>Voortgang en metingen bijhouden</li>
+            <li>Chatcontact tussen de gesprekken door</li>
+            <li>Recepten en informatieve content</li>
+            <li>Tussentijdse aanpassingen van je schema</li>
+            <li>Afsluitende evaluatie</li>
+          </ul>
+          <p class="fineprint">Een extra coachingsgesprek van 30 minuten kost &euro; 50. Alle bedragen zijn inclusief btw.</p>
+        </details>
+      </div>
+      <div class="plan featured">
+        <div class="plan-name">Plus</div>
+        <div class="plan-dur">24 weken</div>
+        <div class="plan-price">&euro; 999<small>investering, inclusief btw</small></div>
+        <p class="plan-claim">De meest intensieve begeleiding, met de meeste contactmomenten over de langste periode.</p>
+        <a class="btn btn-primary" href="#kennismaking">Plan je gratis kennismaking</a>
+        <details class="plan-details">
+          <summary>Wat is inbegrepen?</summary>
+          <h4>Persoonlijke begeleiding</h4>
+          <ul class="tick">
+            <li><strong>16 coachingsgesprekken</strong> van 30 minuten</li>
+            <li>Uitgebreide intake van 60 minuten</li>
+          </ul>
+          <h4>In elk traject</h4>
+          <ul class="tick">
+            <li>Persoonlijk voedingsadvies</li>
+            <li>Toegang tot de app (Virtuagym)</li>
+            <li>Voedingsdagboek</li>
+            <li>Voortgang en metingen bijhouden</li>
+            <li>Chatcontact tussen de gesprekken door</li>
+            <li>Recepten en informatieve content</li>
+            <li>Tussentijdse aanpassingen van je schema</li>
+            <li>Afsluitende evaluatie</li>
+          </ul>
+          <p class="fineprint">Een extra coachingsgesprek van 30 minuten kost &euro; 50. Alle bedragen zijn inclusief btw.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W24: los consult -->
+<section class="section-dark" id="consult">
+  <div class="wrap">
+    <p class="eyebrow">Liever eerst kennismaken</p>
+    <h2>Persoonlijk voedingsconsult</h2>
+    <div class="split">
+      <div>
+        <p class="lead" style="margin-top:8px">Nog niet toe aan een volledig traject? Bij het losse voedingsconsult analyseer ik je voedingsdagboek en krijg je concrete adviezen die je meteen kunt toepassen. Een laagdrempelige manier om te ervaren hoe ik werk.</p>
+        <a class="btn btn-primary" href="#kennismaking" style="margin-top:10px">Plan een voedingsconsult</a>
+      </div>
+      <div class="card">
+        <div class="plan-price" style="color:#fff">&euro; 95<small style="color:rgba(255,255,255,.6)">eenmalig, inclusief btw</small></div>
+        <ul style="margin-top:22px">
+          <li>Analyse van je voedingsdagboek</li>
+          <li>Analyse van je energie-inname</li>
+          <li>Analyse van macro- en micronutri&euml;nten</li>
+          <li>Berekening van je persoonlijke behoefte</li>
+          <li>Analyse- en coachingsgesprek van 60 minuten</li>
+          <li>Praktische adviezen op maat</li>
+          <li><strong>Receptenboekje</strong>, inbegrepen bij het consult</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W20 + W22: over mij, foto en vertrouwensblok -->
+<section class="section-light" id="over">
+  <div class="wrap">
+    <p class="eyebrow">Over de coach</p>
+    <h2>Yuri Leemans</h2>
+    <div class="about">
+      <div class="portrait">
+        <!-- Vervang door een professionele foto, staand formaat -->
+        <img src="foto-placeholder.svg" alt="Portretfoto van Yuri Leemans">
+      </div>
+      <div>
+        <p>Ik combineer jaren ervaring in het onderwijs met werk als personal trainer en keeperstrainer. In al die rollen draait het om hetzelfde: mensen begeleiden, motiveren en helpen om zelf stappen te zetten.</p>
+        <p>Met YuLe Health Boost breng ik dat samen. Niet het dieet staat centraal, maar jij. We kijken naar wat haalbaar is in jouw week en bouwen dat rustig uit tot een routine die blijft hangen, ook als ik straks niet meer meekijk.</p>
+        <p>Werken vanuit Waalwijk, coachen door heel Nederland.</p>
+
+        <h3 style="margin-top:30px">Opleidingen en certificeringen</h3>
+        <ul class="creds">
+          <!-- W21: controleer voor livegang of deze status nog klopt -->
+          <li>Voedingsconsulent <span>NHA</span></li>
+          <li>Voedingsdeskundige <span>Start2Move</span></li>
+          <li>Specialisatie Sport en Voeding <span>Start2Move</span></li>
+          <li>Fitnesstrainer A <span>Sport en People</span></li>
+          <li>Goalkeeperscoach 1 <span>KNVB</span></li>
+          <li>Onderwijsassistent <span>ROC Tilburg</span></li>
+        </ul>
+
+        <!-- W18 + W19: pas tonen zodra de registraties definitief zijn -->
+        <div class="trust">
+          <h3>Geregistreerd &amp; aangesloten bij</h3>
+          <p style="font-size:.92rem;color:var(--slate);margin:8px 0 0">Vervang de vakken hieronder door de offici&euml;le beeldmerken zodra de registratie rond is. Gebruik de logo's alleen volgens de voorwaarden van de betreffende organisatie.</p>
+          <div class="trust-logos">
+            <div class="trust-slot">BGN-logo hier</div>
+            <div class="trust-slot">EREPS-logo hier</div>
+          </div>
+        </div>
+
+        <!-- W23: geen garantie op vergoeding -->
+        <div class="trust" style="margin-top:18px">
+          <h3>Vergoeding via je zorgverzekeraar</h3>
+          <p style="font-size:.94rem;color:var(--slate);margin:10px 0 16px">Begeleiding door een gewichtsconsulent wordt door sommige verzekeraars geheel of gedeeltelijk vergoed vanuit de aanvullende verzekering. Of dat voor jou geldt hangt af van je verzekeraar, je pakket en de aansluiting bij de beroepsvereniging. Vraag dit vooraf zelf na bij je verzekeraar, ik kan geen vergoeding garanderen.</p>
+          <a class="btn btn-ghost btn-sm" href="https://www.gewichtsconsulenten.nl/vergoedingenoverzicht/" target="_blank" rel="noopener">Bekijk het vergoedingenoverzicht</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W26: blog. Verberg deze sectie voor livegang zolang er nog placeholders staan.
+     Verbergen doe je door hieronder style="display:none" toe te voegen aan de section,
+     en de link "Kennis" uit het menu te halen. -->
+<section class="section-light" id="blog" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">Kennis</p>
+    <h2>Blog</h2>
+    <p class="lead">Praktische tips over voeding, gewoontes en volhouden. Kort, onderbouwd en direct toepasbaar.</p>
+    <div class="posts">
+      <!-- Kopieer dit hele blok voor een nieuw artikel -->
+      <a class="post" href="#blog">
+        <img src="blog-placeholder.svg" alt="">
+        <div class="post-body">
+          <div class="post-meta">Voeding <span>3 min lezen</span></div>
+          <h3>Waarom crashdi&euml;ten zelden werken</h3>
+          <p>Een strak dieet levert de eerste weken vaak snel resultaat op. Toch valt het merendeel van de mensen daarna weer terug. Dat komt niet door een gebrek aan wilskracht, maar doordat het patroon niet vol te houden is naast werk, gezin en sociale afspraken. In dit artikel lees je waarom kleine, haalbare aanpassingen op de lange termijn meer opleveren dan een streng schema.</p>
+          <div class="post-more">Lees verder</div>
+        </div>
+      </a>
+      <a class="post" href="#blog">
+        <img src="blog-placeholder.svg" alt="">
+        <div class="post-body">
+          <div class="post-meta">Gewoontes <span>Binnenkort</span></div>
+          <h3>Titel van het tweede artikel</h3>
+          <p>Korte samenvatting van het artikel, ongeveer drie tot vier regels. Genoeg om de lezer te laten zien waar het over gaat, zonder alles al weg te geven.</p>
+          <div class="post-more">Lees verder</div>
+        </div>
+      </a>
+      <a class="post" href="#blog">
+        <img src="blog-placeholder.svg" alt="">
+        <div class="post-body">
+          <div class="post-meta">Recepten <span>Binnenkort</span></div>
+          <h3>Titel van het derde artikel</h3>
+          <p>Korte samenvatting van het artikel, ongeveer drie tot vier regels. Genoeg om de lezer te laten zien waar het over gaat, zonder alles al weg te geven.</p>
+          <div class="post-more">Lees verder</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- W03 + W04 + W05: kennismakingsformulier -->
+<section class="section-dark" id="kennismaking">
+  <div class="wrap">
+    <p class="eyebrow">Gratis kennismaking</p>
+    <h2>Klaar voor je eerste stap?</h2>
+    <p class="lead">Laat je gegevens achter en ik neem contact met je op. Geen verplichtingen, gewoon even kijken of het klikt.</p>
+    <div class="form-grid">
+      <!-- FORMULIER WERKT PAS NA INSTELLEN, zie de uitleg in het bericht.
+           Vervang JOUW_FORMSPREE_ID hieronder door de code van je eigen formulier. -->
+      <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST">
+        <div class="field">
+          <label for="naam">Naam <i>*</i></label>
+          <input id="naam" name="naam" type="text" required autocomplete="name" placeholder="Je naam">
+        </div>
+        <div class="field">
+          <label for="email">E-mailadres <i>*</i></label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="jij@voorbeeld.nl">
+        </div>
+        <div class="field">
+          <label for="tel">Telefoonnummer <span style="font-weight:400;color:rgba(255,255,255,.5)">(optioneel)</span></label>
+          <input id="tel" name="telefoon" type="tel" autocomplete="tel" placeholder="06 12345678">
+        </div>
+        <div class="field">
+          <label for="vraag">Waar kan ik je bij helpen? <span style="font-weight:400;color:rgba(255,255,255,.5)">(optioneel)</span></label>
+          <textarea id="vraag" name="vraag" placeholder="Vertel kort waar je tegenaan loopt"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Gratis kennismaking aanvragen</button>
+        <p class="form-note">Na je aanvraag neem ik contact met je op om samen een geschikt moment voor de gratis online kennismaking te plannen.</p>
+      </form>
+
+      <div>
+        <h3>Liever direct contact?</h3>
+        <ul class="contact-list">
+          <li>
+            <strong>Mail</strong>
+            <a href="mailto:ylboost@outlook.com">ylboost@outlook.com</a>
+          </li>
+          <li>
+            <strong>Werkgebied</strong>
+            Volledig online, dus heel Nederland. Gevestigd in Waalwijk.
+          </li>
+        </ul>
+        <!-- W28: socials pas tonen zodra de accounts bestaan. Haal het comment weg
+             en vul de juiste link in, anders staat er een dode link op de site.
+        <div class="socials">
+          <a href="https://instagram.com/JOUW_ACCOUNT" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/316XXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/></svg>
+          </a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- W29: footer -->
+<footer>
+  <div class="wrap foot">
+    <div>&copy; <span id="jaar">2026</span> YuLe Health Boost, Waalwijk</div>
+    <!-- Vul KvK-nummer in zodra de inschrijving rond is -->
+    <div>
+      KvK 00000000 &nbsp;&middot;&nbsp;
+      <a href="privacyverklaring.html">Privacyverklaring</a> &nbsp;&middot;&nbsp;
+      <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// altijd bovenaan starten, ook na een refresh
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) window.scrollTo(0, 0);
+window.addEventListener('load', function(){ if (!location.hash) window.scrollTo(0, 0); });
+
+document.getElementById('jaar').textContent = new Date().getFullYear();
+
+// mobiel menu
+var toggle = document.querySelector('.nav-toggle');
+var links = document.getElementById('navlinks');
+toggle.addEventListener('click', function(){
+  var open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+links.addEventListener('click', function(e){
+  if (e.target.closest('a')) links.classList.remove('open');
+});
+
+// looptijd-tabs
+var tabs = document.querySelectorAll('.tab');
+tabs.forEach(function(tab){
+  tab.addEventListener('click', function(){
+    tabs.forEach(function(t){
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      var active = (t === tab);
+      t.setAttribute('aria-selected', active);
+      panel.hidden = !active;
+    });
+  });
+});
+</script>
+</body>
+</html>
