@@ -186,6 +186,20 @@ form .btn{width:100%;text-align:center;margin-top:6px}
 .socials a:hover{border-color:var(--lime);background:rgba(149,182,5,.12)}
 .socials svg{width:20px;height:20px;stroke:var(--lime);fill:none;stroke-width:2}
 
+/* embeds */
+.shop{margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
+.shop h3{font-size:1.6rem;margin-bottom:10px}
+.shop > p{color:var(--slate);max-width:44em}
+.embed-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:22px;color:var(--ink)}
+.embed-card.booking{margin-top:0;padding:18px;min-height:420px}
+.shop-frame{display:block;width:100%;height:760px;border:0}
+.legal-note{font-size:.85rem;color:var(--slate);margin:14px 0 0}
+.legal-note a{text-decoration:underline}
+.section-dark .legal-note{color:rgba(255,255,255,.6)}
+.section-dark .legal-note a{color:var(--lime-bright)}
+.socials-foot{margin-top:0}
+.socials-foot a{width:38px;height:38px}
+
 footer{background:var(--ink);color:rgba(255,255,255,.55);padding:44px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.87rem}
 .foot{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
 footer a{color:rgba(255,255,255,.75)}
@@ -204,6 +218,8 @@ footer a{color:rgba(255,255,255,.75)}
   .nav-toggle{display:block}
   section{padding:60px 0}
   .portrait{max-width:340px;margin:0 auto}
+  .shop-frame{height:900px}
+  .embed-card.booking{padding:10px}
 }
 </style>
 </head>
@@ -235,7 +251,7 @@ footer a{color:rgba(255,255,255,.75)}
         <a class="btn btn-primary" href="#kennismaking">Plan je gratis kennismaking</a>
         <a class="btn btn-ghost" href="#aanpak">Bekijk hoe de begeleiding werkt</a>
       </div>
-      <p class="hero-note">Vrijblijvend en online. Je zit nergens aan vast.</p>
+      <p class="hero-note">Gratis telefonische kennismaking. Vrijblijvend, je zit nergens aan vast.</p>
       <svg class="pulse" viewBox="0 0 520 60" aria-hidden="true">
         <path d="M0 30 H150 l14 -22 l13 44 l12 -52 l14 52 l11 -22 H520"/>
       </svg>
@@ -307,7 +323,7 @@ footer a{color:rgba(255,255,255,.75)}
     <div class="steps">
       <div class="step">
         <h3>Gratis kennismaking</h3>
-        <p>We bespreken online waar je nu staat en wat je wil bereiken. Vrijblijvend, je zit nergens aan vast.</p>
+        <p>Een kort telefoongesprek over waar je nu staat en wat je wil bereiken. Vrijblijvend, je zit nergens aan vast.</p>
       </div>
       <div class="step">
         <h3>Intake</h3>
@@ -386,7 +402,7 @@ footer a{color:rgba(255,255,255,.75)}
   <div class="wrap">
     <p class="eyebrow">Begeleidingstrajecten</p>
     <h2>Trajecten &amp; investering</h2>
-    <p class="lead">Basis en Plus bevatten dezelfde onderdelen, Plus geeft je meer coachingsgesprekken. Hoe langer het traject, hoe voordeliger de begeleiding per week. Kies eerst een gratis kennismaking, daarna bepalen we samen welk traject past.</p>
+    <p class="lead">Basis en Plus bevatten dezelfde onderdelen, Plus geeft je meer coachingsgesprekken. Hoe langer het traject, hoe voordeliger de begeleiding per week. Twijfel je? Plan eerst een gratis kennismaking, dan bepalen we samen welk traject past. Weet je het al, dan koop je je traject <a href="#webshop">direct in de webshop</a>.</p>
 
     <div class="tabs" role="tablist" aria-label="Looptijd">
       <button class="tab" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="true">6 weken</button>
@@ -515,7 +531,7 @@ footer a{color:rgba(255,255,255,.75)}
       <div class="plan">
         <div class="plan-name">Basis</div>
         <div class="plan-dur">24 weken</div>
-        <div class="plan-price">&euro; 849<small>investering, inclusief btw</small></div>
+        <div class="plan-price">&euro; 889<small>investering, inclusief btw</small></div>
         <p class="plan-claim">Een half jaar begeleiding. Ruimte om terugval op te vangen en je routine echt eigen te maken.</p>
         <a class="btn btn-ghost" href="#kennismaking">Plan je gratis kennismaking</a>
         <details class="plan-details">
@@ -567,6 +583,16 @@ footer a{color:rgba(255,255,255,.75)}
         </details>
       </div>
     </div>
+
+    <!-- Virtuagym webshop -->
+    <div class="shop" id="webshop">
+      <h3>Direct een traject kopen</h3>
+      <p>Weet je al welk traject bij je past? Dan rond je je aankoop hieronder direct af. Je betaalt veilig via Mollie.</p>
+      <div class="embed-card">
+        <iframe class="shop-frame" src="https://yulehealthboost.virtuagym.com/webshop/?club=dWNxQzNZMkZGRmR1R1NUVkc3M0Z4QT09&embedded=1" title="Webshop YuLe Health Boost" scrolling="yes" loading="lazy"></iframe>
+      </div>
+      <p class="legal-note">Met je aankoop ga je akkoord met de <a href="algemene-voorwaarden.html" target="_blank" rel="noopener">algemene voorwaarden</a>. Lees in de <a href="privacyverklaring.html" target="_blank" rel="noopener">privacyverklaring</a> hoe ik met je gegevens omga.</p>
+    </div>
   </div>
 </section>
 
@@ -578,7 +604,7 @@ footer a{color:rgba(255,255,255,.75)}
     <div class="split">
       <div>
         <p class="lead" style="margin-top:8px">Nog niet toe aan een volledig traject? Bij het losse voedingsconsult analyseer ik je voedingsdagboek en krijg je concrete adviezen die je meteen kunt toepassen. Een laagdrempelige manier om te ervaren hoe ik werk.</p>
-        <a class="btn btn-primary" href="#kennismaking" style="margin-top:10px">Plan een voedingsconsult</a>
+        <a class="btn btn-primary" href="#webshop" style="margin-top:10px">Boek een voedingsconsult</a>
       </div>
       <div class="card">
         <div class="plan-price" style="color:#fff">&euro; 95<small style="color:rgba(255,255,255,.6)">eenmalig, inclusief btw</small></div>
@@ -684,35 +710,19 @@ footer a{color:rgba(255,255,255,.75)}
   </div>
 </section>
 
-<!-- W03 + W04 + W05: kennismakingsformulier -->
+<!-- Kennismaking: Virtuagym afspraakwidget. Alle knoppen "Plan je gratis kennismaking" linken hierheen. -->
 <section class="section-dark" id="kennismaking">
   <div class="wrap">
     <p class="eyebrow">Gratis kennismaking</p>
     <h2>Klaar voor je eerste stap?</h2>
-    <p class="lead">Laat je gegevens achter en ik neem contact met je op. Geen verplichtingen, gewoon even kijken of het klikt.</p>
+    <p class="lead">Plan zelf een moment in voor een gratis telefonische kennismaking van 15 tot 20 minuten. Geen verplichtingen, gewoon even kijken of het klikt.</p>
     <div class="form-grid">
-      <!-- FORMULIER WERKT PAS NA INSTELLEN, zie de uitleg in het bericht.
-           Vervang JOUW_FORMSPREE_ID hieronder door de code van je eigen formulier. -->
-      <form action="https://formspree.io/f/JOUW_FORMSPREE_ID" method="POST">
-        <div class="field">
-          <label for="naam">Naam <i>*</i></label>
-          <input id="naam" name="naam" type="text" required autocomplete="name" placeholder="Je naam">
+      <div>
+        <div class="embed-card booking">
+          <vg-guest-booking widget-key="6aca0946117398aedf370c8e" club-id="104382" lang="nl" source=""></vg-guest-booking>
         </div>
-        <div class="field">
-          <label for="email">E-mailadres <i>*</i></label>
-          <input id="email" name="email" type="email" required autocomplete="email" placeholder="jij@voorbeeld.nl">
-        </div>
-        <div class="field">
-          <label for="tel">Telefoonnummer <span style="font-weight:400;color:rgba(255,255,255,.5)">(optioneel)</span></label>
-          <input id="tel" name="telefoon" type="tel" autocomplete="tel" placeholder="06 12345678">
-        </div>
-        <div class="field">
-          <label for="vraag">Waar kan ik je bij helpen? <span style="font-weight:400;color:rgba(255,255,255,.5)">(optioneel)</span></label>
-          <textarea id="vraag" name="vraag" placeholder="Vertel kort waar je tegenaan loopt"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Gratis kennismaking aanvragen</button>
-        <p class="form-note">Na je aanvraag neem ik contact met je op om samen een geschikt moment voor de gratis online kennismaking te plannen.</p>
-      </form>
+        <p class="legal-note">Bij het inplannen laat je je naam, e-mailadres en telefoonnummer achter. Lees in de <a href="privacyverklaring.html" target="_blank" rel="noopener">privacyverklaring</a> hoe ik daarmee omga. Op de kennismaking zijn de <a href="algemene-voorwaarden.html" target="_blank" rel="noopener">algemene voorwaarden</a> van toepassing.</p>
+      </div>
 
       <div>
         <h3>Liever direct contact?</h3>
@@ -726,17 +736,17 @@ footer a{color:rgba(255,255,255,.75)}
             Volledig online, dus heel Nederland. Gevestigd in Waalwijk.
           </li>
         </ul>
-        <!-- W28: socials pas tonen zodra de accounts bestaan. Haal het comment weg
-             en vul de juiste link in, anders staat er een dode link op de site.
         <div class="socials">
-          <a href="https://instagram.com/JOUW_ACCOUNT" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="INSTAGRAM_URL" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://wa.me/316XXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/></svg>
+          <a href="FACEBOOK_URL" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/yuri-leemans" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-6.5M12 13.5c0-1.8 1.2-3 2.6-3S17 11.4 17 13.5V17"/></svg>
           </a>
         </div>
-        -->
       </div>
     </div>
   </div>
@@ -746,9 +756,19 @@ footer a{color:rgba(255,255,255,.75)}
 <footer>
   <div class="wrap foot">
     <div>&copy; <span id="jaar">2026</span> YuLe Health Boost, Waalwijk</div>
-    <!-- Vul KvK-nummer in zodra de inschrijving rond is -->
+    <div class="socials socials-foot">
+      <a href="INSTAGRAM_URL" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="FACEBOOK_URL" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/yuri-leemans" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-6.5M12 13.5c0-1.8 1.2-3 2.6-3S17 11.4 17 13.5V17"/></svg>
+      </a>
+    </div>
     <div>
-      KvK 00000000 &nbsp;&middot;&nbsp;
+      KvK 42163925 &nbsp;&middot;&nbsp;
       <a href="privacyverklaring.html">Privacyverklaring</a> &nbsp;&middot;&nbsp;
       <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
     </div>
@@ -787,5 +807,6 @@ tabs.forEach(function(tab){
   });
 });
 </script>
+<script src="https://static.virtuagym.com/vg-guest-booking-widget/dist/js/app.js"></script>
 </body>
 </html>
